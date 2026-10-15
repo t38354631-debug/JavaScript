@@ -1,0 +1,14 @@
+html: tem 1 input tipo text nome produto, 2 input de number qtd e preco, e um botão com id 
+resultado lincado comm javascript
+
+javascript: const botaõ com get element... pegando id do butõa calcular, 
+
+colocando botaõ em evidencia e adicionar addEvent listen "click", quando a pessoa clicar no botão no 
+html a função que iremos criar sera executada, então adicione o nome da funcao posteriorment
+crie a funcao e de o nome para ela, no meu caso chamarei de calcular abraa chaves, e coloque o processamento de dados dentro do 
+da funcao, crie uma const para chamar o valor preco e a outra para quantidade usando o get.elementby id ...e coloque value para pegar o valor dos inputs digitados
+e voverta para number pois o value pega o valor dos inputs na forma de string, então converta para numero.
+
+crie uma let para armazenar o resultado do processamento da multiplicação entre os  numeros pegados nos iputs atraves do id,
+exiba o resultado usando o get element by id, para pegar o paragrafo <p> e adicione o textContent para esse resultado do 
+java script feito pela funcão calcular com a variavel que quarda o processamento, possa ser armazenado no html pelo id resultado.

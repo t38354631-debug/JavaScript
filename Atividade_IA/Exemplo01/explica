@@ -1,0 +1,74 @@
+
+O servidor interpreta o name como a chave do par chave‑valor enviado pelo formulário, usando essa chave para montar variáveis ou campos no backend.
+Em poucas palavras: quando o formulário é enviado, o navegador cria pares como name_do_input=valor_digitado e envia ao servidor via GET ou POST; o servidor então transforma esses pares em variáveis acessíveis no backend.
+O que o navegador realmente envia
+Quando o usuário envia um formulário, o navegador monta algo como:
+email=joao@example.com
+senha=123456
+cidade=Jaguariúna
+Cada linha representa um par name=valor.
+Se o input não tiver name, ele simplesmente não aparece no envio.
+Como o servidor interpreta esses pares
+Cada backend converte os pares name=valor em estruturas internas:
+PHP → $_POST['email']
+Node/Express → req.body.email
+Python/Flask → request.form['email']
+Java/Spring → mapeia automaticamente para atributos de objetos (@RequestParam ou DTOs)
+Ou seja: o servidor não sabe nada sobre o input, só recebe o texto do name e o valor associado.
+Por que o name é essencial
+O name é o identificador semântico do dado.
+É ele que diz ao servidor o que aquele valor representa — “email”, “senha”, “cidade”, etc.
+Sem name, o servidor não tem como saber que aquele valor existe.
+Quando vários inputs têm o mesmo name
+Isso é intencional e muito usado:
+checkboxes → vários valores com o mesmo name → o servidor recebe uma lista
+radio buttons → mesmo name → apenas um valor é enviado
+select múltiplo → vários valores com o mesmo name
+O servidor interpreta isso como um conjunto de valores associados à mesma chave.
+Diferença entre id e name
+id → usado no navegador (CSS, JS, DOM), deve ser único
+name → usado no envio ao servidor, pode se repetir
+O servidor não recebe o id, apenas o name.
+Exemplo completo
+HTML:
+<input type="text" name="usuario">
+<input type="password" name="senha">
+Envio real:
+usuario=Maria
+senha=abc123
+Backend (exemplo em Node):
+req.body.usuario  // "Maria"
+req.body.senha    // "abc123"
+Pergunta para avançarmos
+Quer que eu mostre um exemplo completo de envio e leitura desses valores em PHP, Node, Python ou outra linguagem?
+
+
+
+
+          <!-- Conteúdo principal do artigo -->
+        </article>
+
+        <figure>
+            <!-- Imagem ou gráfico relacionado -->
+        </figure>
+
+        <section>
+            <!-- Seção complementar -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Rodapé -->
+    </footer>
+
+ 
+    <!--
+    
+
+    ✅ Boas práticas adicionais
+Coloque dentro de <nav> apenas links de navegação.
+Use <article> para conteúdo independente (ex.: texto explicativo da calculadora).
+Use <section> para partes temáticas (ex.: formulário, resultados).
+Use <figure> apenas se houver imagem, gráfico ou tabela com <figcaption>.
+   */          
+    -->
